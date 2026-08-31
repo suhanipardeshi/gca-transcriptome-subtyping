@@ -17,6 +17,15 @@
 # Models are refit on each of the 15 outer training folds using the modal
 # hyperparameters from the benchmark (script 21), so the counts describe the
 # same configurations that produced the reported performance.
+#
+# Note on the LASSO count specifically: this script holds one fixed lambda per
+# phenotype (the modal value from script 21) across all 15 refits. Script
+# 24_stability_enrichment.R instead re-tunes lambda within each outer fold's
+# own inner cross-validation loop, matching the nested cross-validation design
+# in Chapter 3 of the dissertation. The two scripts therefore report different
+# LASSO gene-per-fold counts by design. The dissertation (Table 3, Section 4.4)
+# quotes script 24's figures, not this script's, because 24 uses the same
+# fold-by-fold tuning as the rest of the benchmark.
 # ==============================================================================
 
 setwd("C:/Users/suhan/Desktop/Dissertation_aug")
